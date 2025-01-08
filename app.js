@@ -6,7 +6,7 @@ app.use(express.urlencoded({ extended: true }));
 const User = require("./models/customerSchema");
 app.set("view engine", "ejs");
 app.use(express.static("public"));
-
+var moment = require('moment');
 // Auto refresh
 
 const path = require("path");
@@ -30,7 +30,8 @@ app.get("/", (req, res) => {
   // find all data
   User.find()
     .then((result) => {
-      res.render("index", { arr: result });
+      console.log(result);
+      res.render("index", { arr: result , moment: moment});
     })
     .catch((err) => {
       console.log(err);
@@ -39,17 +40,7 @@ app.get("/", (req, res) => {
   // result ==> array of objects
 });
 
-app.get("/user/:id", (req, res) => {
-  // result ==> object
-  User.findById(req.params.id)
-    .then((result) => {
-      res.render("user/view", {obj: result});
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-  
-});
+
 
 app.get("/user/add.html", (req, res) => {
   res.render("user/add");
@@ -58,6 +49,19 @@ app.get("/user/add.html", (req, res) => {
 app.get("/user/edit.html", (req, res) => {
   res.render("user/edit");
 });
+
+app.get("/user/:id", (req, res) => {
+  // result ==> object
+  User.findById(req.params.id)
+    .then((result) => {
+      res.render("user/view", {obj: result , moment: moment});
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  
+});
+
 
 // POST Request
 

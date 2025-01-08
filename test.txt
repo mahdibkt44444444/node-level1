@@ -3,3 +3,43 @@ model.save () ==> to send data to DB
 model.find() ==> to get all data from DB
 
 model.findById("677e4572ccf17da22473d00c") ==> to get all data from DB for this ID
+
+
+
+
+
+{
+    _id: new ObjectId('677e4572ccf17da22473d00c'),      
+    firstName: 'mahdi',
+    lastName: 'bkt',
+    email: 'mahdibkt444447777777@gmail.com',
+    phoneNumber: '56666666',
+    age: 25,
+    country: 'Tunisia',
+    gender: 'Male',
+    __v: 0
+  },
+  {
+    _id: new ObjectId('677e4ee7fedd625097a19b8a'),      
+    firstName: 'eya',
+    lastName: 'ghni',
+    email: 'eyabkt@gmail.com',
+    phoneNumber: '5852152',
+    age: 23,
+    country: 'Egypt',
+    gender: 'Female',
+    __v: 0
+  },
+  {
+    _id: new ObjectId('677ea9945838fcbd647790c8'),      
+    firstName: 'laila',
+    lastName: 'bdgm',
+    email: 'laila@gmail.com',
+    phoneNumber: '852525122',
+    age: 56,
+    country: 'Tunisia',
+    gender: 'Female',
+    createdAt: 2025-01-08T16:36:36.273Z,
+    updatedAt: 2025-01-08T16:36:36.273Z,
+    __v: 0
+  }

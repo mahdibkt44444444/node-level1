@@ -53,7 +53,8 @@
             <td><%= item.gender %> </td>
             <td><%= item.country %></td>
             <td><%= item.age %></td>
-            <td>1 days ago </td>
+            <td><%= moment(item.updatedAt).format("Do MMM YY"); %>
+            <%= moment(item.updatedAt).fromNow();     %> </td>
             <td>
               <a data-bs-toggle="tooltip"
                data-bs-title="View details"
