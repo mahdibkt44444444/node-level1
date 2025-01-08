@@ -26,32 +26,33 @@ liveReloadServer.server.once("connection", () => {
 // GET Request
 
 app.get("/", (req, res) => {
-  console.log("----------------------------")
+  console.log("----------------------------");
   // find all data
   User.find()
     .then((result) => {
-      res.render("index", {arr: result});
+      res.render("index", { arr: result });
     })
     .catch((err) => {
       console.log(err);
     });
 
-
   // result ==> array of objects
 });
 
-
-
-
-
-
+app.get("/user/:id", (req, res) => {
+  // result ==> object
+  User.findById(req.params.id)
+    .then((result) => {
+      res.render("user/view", {obj: result});
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  
+});
 
 app.get("/user/add.html", (req, res) => {
   res.render("user/add");
-});
-
-app.get("/user/view.html", (req, res) => {
-  res.render("user/view");
 });
 
 app.get("/user/edit.html", (req, res) => {
@@ -61,7 +62,6 @@ app.get("/user/edit.html", (req, res) => {
 // POST Request
 
 app.post("/user/add.html", (req, res) => {
-
   const user = new User(req.body);
   user
     .save()

@@ -1,0 +1,5 @@
+model.save () ==> to send data to DB
+
+model.find() ==> to get all data from DB
+
+model.findById("677e4572ccf17da22473d00c") ==> to get all data from DB for this ID
