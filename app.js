@@ -26,9 +26,25 @@ liveReloadServer.server.once("connection", () => {
 // GET Request
 
 app.get("/", (req, res) => {
+  console.log("----------------------------")
+  // find all data
+  User.find()
+    .then((result) => {
+      res.render("index", {arr: result});
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+
   // result ==> array of objects
-  res.render("index", {});
 });
+
+
+
+
+
+
 
 app.get("/user/add.html", (req, res) => {
   res.render("user/add");
@@ -45,12 +61,12 @@ app.get("/user/edit.html", (req, res) => {
 // POST Request
 
 app.post("/user/add.html", (req, res) => {
-  
+
   const user = new User(req.body);
   user
     .save()
     .then(() => {
-      res.redirect("/user/add.html");
+      res.redirect("/");
     })
     .catch((err) => {
       console.log(err);
