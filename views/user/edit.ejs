@@ -59,6 +59,8 @@
           <div class="col-md-6">
             <label for="inputfirstName4" class="form-label">First Name:</label>
             <input
+            name="firstName"
+
               placeholder="Ali..."
               type="text"
               class="form-control"
@@ -68,6 +70,7 @@
           <div class="col-md-6">
             <label for="inputlastName4" class="form-label">Last Name:</label>
             <input
+            name="lastName"
               placeholder="Hassan..."
               type="text"
               class="form-control"
@@ -78,6 +81,7 @@
           <div class="col-md-6">
             <label for="inputemail4" class="form-label">Email:</label>
             <input
+            name="email"
               placeholder="ali@gmail.com"
               type="email"
               class="form-control"
@@ -87,6 +91,7 @@
           <div class="col-md-6">
             <label for="inputtele4" class="form-label">Telephone:</label>
             <input
+            name="phoneNumber"
               placeholder="011987899"
               type="number"
               class="form-control"
@@ -98,6 +103,7 @@
             <div class="col-md-6">
               <label for="inputage4" class="form-label">Age:</label>
               <input
+              name="age"
                 placeholder="Your Age: ..."
                 type="number"
                 class="form-control"
@@ -175,9 +181,11 @@
               >
                 Close
               </button>
-              <button type="button" class="btn btn-danger">
+              <form action="/edit/<%= obj._id %>?_method=DELETE " method="POST">
+              <button type="submit" class="btn btn-danger">
                 Delete
               </button>
+              </form>
             </div>
           </div>
         </div>

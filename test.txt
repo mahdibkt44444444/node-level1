@@ -6,6 +6,10 @@ model.findById("677e4572ccf17da22473d00c") ==> to get all data from DB for this 
 
 
 
+model.findByIdDelete("677e4572ccf17da22473d00c") ===> Dlelet Request
+model.deleteOne({_id: req.params.id}) ===> Dlelet Request
+
+
 
 
 {
