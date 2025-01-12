@@ -1,4 +1,6 @@
 model.save () ==> to send data to DB
+model.create () ==> to send data to DB
+
 
 model.find() ==> to get all data from DB
 
@@ -9,41 +11,58 @@ model.findById("677e4572ccf17da22473d00c") ==> to get all data from DB for this 
 model.findByIdDelete("677e4572ccf17da22473d00c") ===> Dlelet Request
 model.deleteOne({_id: req.params.id}) ===> Dlelet Request
 
+Model.findByIdAndUpdate((req.params.id, req.body))
+User.updateOne({_id: req.params.id},req.body)
 
-
-
-{
-    _id: new ObjectId('677e4572ccf17da22473d00c'),      
+[
+  {
+    _id: new ObjectId('677fc1bb2a913049792ae591'),     
     firstName: 'mahdi',
     lastName: 'bkt',
-    email: 'mahdibkt444447777777@gmail.com',
-    phoneNumber: '56666666',
-    age: 25,
+    email: 'mahdibkt4444@gmail.com',
+    phoneNumber: '5666777',
+    age: 27,
+    country: 'Thailand',
+    gender: 'Male',
+    createdAt: 2025-01-09T12:31:55.648Z,
+    updatedAt: 2025-01-10T10:08:59.595Z,
+    __v: 0
+  },
+  {
+    _id: new ObjectId('6780e08312ece7cbee3af0b3'),     
+    firstName: 'eya',
+    lastName: 'rouhy',
+    email: 'khirahsayri@gmail.com',
+    phoneNumber: '75655486',
+    age: 24,
+    country: 'Belgium',
+    gender: 'Female',
+    createdAt: 2025-01-10T08:55:31.709Z,
+    updatedAt: 2025-01-10T10:10:37.162Z,
+    __v: 0
+  },
+  {
+    _id: new ObjectId('6780e3fac98d55c2c0cc8435'),     
+    firstName: 'krux',
+    lastName: 'bkt',
+    email: 'pa@gmail.comdqk',
+    phoneNumber: '2455885',
+    age: 60,
     country: 'Tunisia',
     gender: 'Male',
+    createdAt: 2025-01-10T09:10:18.523Z,
+    updatedAt: 2025-01-10T10:15:17.482Z,
     __v: 0
   },
   {
-    _id: new ObjectId('677e4ee7fedd625097a19b8a'),      
-    firstName: 'eya',
-    lastName: 'ghni',
-    email: 'eyabkt@gmail.com',
-    phoneNumber: '5852152',
-    age: 23,
-    country: 'Egypt',
-    gender: 'Female',
-    __v: 0
-  },
-  {
-    _id: new ObjectId('677ea9945838fcbd647790c8'),      
-    firstName: 'laila',
-    lastName: 'bdgm',
-    email: 'laila@gmail.com',
-    phoneNumber: '852525122',
-    age: 56,
-    country: 'Tunisia',
-    gender: 'Female',
-    createdAt: 2025-01-08T16:36:36.273Z,
-    updatedAt: 2025-01-08T16:36:36.273Z,
+    _id: new ObjectId('6780e7d3d6e283647f1d2fcf'),     
+    firstName: '',
+    lastName: '',
+    email: '',
+    phoneNumber: '',
+    age: null,
+    createdAt: 2025-01-10T09:26:43.369Z,
+    updatedAt: 2025-01-10T09:26:43.369Z,
     __v: 0
   }
+]

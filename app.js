@@ -79,9 +79,8 @@ app.get("/view/:id", (req, res) => {
 // POST Request
 
 app.post("/user/add.html", (req, res) => {
-  const user = new User(req.body);
-  user
-    .save()
+  User
+    .create(req.body)
     .then(() => {
       res.redirect("/");
     })
@@ -89,6 +88,26 @@ app.post("/user/add.html", (req, res) => {
       console.log(err);
     });
 });
+
+
+// search
+// trim ==> remove white space
+app.post("/search", (req, res) => {
+  console.log("*****************************")
+  const searchText = req.body.searchText.trim();
+  console.log(req.body.searchText)
+
+  User.find({ $or : [{firstName:searchText },{lastName:searchText}]} )
+    .then((result) => {
+      console.log(result)
+      res.render("user/search", {arr: result , moment: moment});
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+
 
 // DELETE Request
 app.delete("/edit/:id", (req, res) => {
@@ -103,6 +122,27 @@ app.delete("/edit/:id", (req, res) => {
     });
   
 }); 
+
+
+// PUT Request
+
+app.put("/edit/:id", (req, res) => {
+  console.log("***************")
+  const id = req.params.id;
+  const body = req.body;
+  User.updateOne({_id: id},body)
+  .then((result) => {
+    console.log(result);
+  res.redirect("/");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+  
+  
+}); 
+
+
 
 
 
